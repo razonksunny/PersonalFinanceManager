@@ -1,0 +1,481 @@
+/*
+ * Personal Finance Manager - stylesheet
+ *
+ * JavaFX CSS is close to normal CSS, but it has no variables, so the colours
+ * are written out here and listed once:
+ *
+ *   page background  #F7F9FC      surface (cards, tables)  #FFFFFF
+ *   border           #E4E9F0      text                      #1F2A37
+ *   muted text       #6B7A8F
+ *   primary          #2E6FB7      hover #26609F   pressed #1F5188
+ *   good             #1E7A46      danger #C0392B  warning #B26A00
+ *
+ * JavaFX also has no box-shadow; a dropshadow effect is used instead.
+ */
+
+/* ---------------------------------------------------------------- base --- */
+
+.root {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 13px;
+    -fx-focus-color: #9CC4EA;
+    -fx-faint-focus-color: #E8F1FA;
+}
+
+.app-root,
+.page-root,
+.login-root {
+    -fx-background-color: #F7F9FC;
+}
+
+/* -------------------------------------------------------------- header --- */
+
+.app-header {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E4E9F0;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 14 22 14 22;
+}
+
+.app-title {
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1F2A37;
+}
+
+.user-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #6B7A8F;
+}
+
+/* ----------------------------------------------------------- navigation --- */
+
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #4A5A6E;
+    -fx-font-size: 13px;
+    -fx-padding: 7 16 7 16;
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-cursor: hand;
+}
+
+.nav-button:hover {
+    -fx-background-color: #EDF3FA;
+    -fx-text-fill: #2E6FB7;
+}
+
+.nav-button:pressed {
+    -fx-background-color: #E1EBF7;
+}
+
+.nav-button.nav-active {
+    -fx-background-color: #E6F0FB;
+    -fx-text-fill: #1F5188;
+    -fx-font-weight: bold;
+}
+
+.nav-button.nav-active:hover {
+    -fx-background-color: #DCE9F8;
+}
+
+/* -------------------------------------------------------------- buttons --- */
+
+.primary-button {
+    -fx-background-color: #2E6FB7;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-padding: 7 16 7 16;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+
+.primary-button:hover {
+    -fx-background-color: #26609F;
+}
+
+.primary-button:pressed {
+    -fx-background-color: #1F5188;
+}
+
+.ghost-button {
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #3B4A5C;
+    -fx-font-size: 13px;
+    -fx-padding: 7 16 7 16;
+    -fx-background-radius: 8;
+    -fx-border-color: #DCE3EC;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-cursor: hand;
+}
+
+.ghost-button:hover {
+    -fx-background-color: #F4F7FB;
+    -fx-border-color: #C4D2E3;
+}
+
+.ghost-button:pressed {
+    -fx-background-color: #E9EFF7;
+}
+
+/* ---------------------------------------------------------------- cards --- */
+
+.card {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 8;
+    -fx-border-color: #E4E9F0;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-padding: 18;
+    -fx-effect: dropshadow(gaussian, rgba(17, 34, 51, 0.06), 10, 0, 0, 2);
+}
+
+/* A white box that groups a form or a toolbar together. */
+.panel {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 8;
+    -fx-border-color: #E4E9F0;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-padding: 12;
+}
+
+.card-title {
+    -fx-font-size: 12px;
+    -fx-text-fill: #6B7A8F;
+}
+
+.card-value {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+}
+
+.value-good { -fx-text-fill: #1E7A46; }
+.value-danger { -fx-text-fill: #C0392B; }
+.value-neutral { -fx-text-fill: #1F2A37; }
+
+/* --------------------------------------------------------------- labels --- */
+
+.page-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1F2A37;
+}
+
+.section-title {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1F2A37;
+}
+
+.body-text {
+    -fx-font-size: 13px;
+    -fx-text-fill: #1F2A37;
+}
+
+.section-hint {
+    -fx-font-size: 12px;
+    -fx-text-fill: #6B7A8F;
+}
+
+.field-label {
+    -fx-font-size: 11px;
+    -fx-text-fill: #6B7A8F;
+}
+
+.summary-label {
+    -fx-font-size: 12.5px;
+    -fx-text-fill: #4A5A6E;
+}
+
+.error-text {
+    -fx-font-size: 12px;
+    -fx-text-fill: #C0392B;
+}
+
+/* ---------------------------------------------------------------- login --- */
+
+.login-card {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 12;
+    -fx-border-color: #E4E9F0;
+    -fx-border-radius: 12;
+    -fx-border-width: 1;
+    -fx-padding: 30 28 22 28;
+    -fx-effect: dropshadow(gaussian, rgba(17, 34, 51, 0.08), 18, 0, 0, 4);
+}
+
+.login-title {
+    -fx-font-size: 19px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1F2A37;
+}
+
+/* ----------------------------------------------------------- input boxes --- */
+
+.text-field,
+.password-field {
+    -fx-min-height: 34;
+    -fx-pref-height: 34;
+    -fx-background-color: #FFFFFF;
+    -fx-background-insets: 0;
+    -fx-border-color: #DCE3EC;
+    -fx-border-radius: 7;
+    -fx-background-radius: 7;
+    -fx-border-width: 1;
+    -fx-padding: 7 10 7 10;
+    -fx-text-fill: #1F2A37;
+    -fx-prompt-text-fill: #9AA8B9;
+}
+
+.text-field:focused,
+.password-field:focused {
+    -fx-border-color: #2E6FB7;
+}
+
+.choice-box {
+    -fx-min-height: 34;
+    -fx-pref-height: 34;
+    -fx-background-color: #FFFFFF;
+    -fx-background-insets: 0;
+    -fx-border-color: #DCE3EC;
+    -fx-border-radius: 7;
+    -fx-background-radius: 7;
+    -fx-border-width: 1;
+    -fx-padding: 0;
+    -fx-cursor: hand;
+}
+
+.choice-box:focused {
+    -fx-border-color: #2E6FB7;
+}
+
+.choice-box > .label {
+    -fx-text-fill: #1F2A37;
+    -fx-padding: 7 6 7 10;
+}
+
+.choice-box .arrow {
+    -fx-background-color: #5A6B80;
+}
+
+.choice-box .context-menu {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 8;
+    -fx-border-color: #E4E9F0;
+    -fx-border-radius: 8;
+    -fx-padding: 4;
+}
+
+.choice-box .menu-item {
+    -fx-background-radius: 6;
+    -fx-padding: 5 10 5 10;
+}
+
+.choice-box .menu-item .label {
+    -fx-text-fill: #1F2A37;
+    -fx-font-size: 13px;
+}
+
+.choice-box .menu-item:focused {
+    -fx-background-color: #E6F0FB;
+}
+
+.choice-box .menu-item:focused .label {
+    -fx-text-fill: #1F5188;
+}
+
+.date-picker {
+    -fx-min-height: 34;
+    -fx-pref-height: 34;
+    -fx-background-color: #FFFFFF;
+    -fx-background-insets: 0;
+    -fx-border-color: #DCE3EC;
+    -fx-border-radius: 7;
+    -fx-background-radius: 7;
+    -fx-border-width: 1;
+}
+
+.date-picker:focused {
+    -fx-border-color: #2E6FB7;
+}
+
+.date-picker > .text-field {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 7 8 7 10;
+}
+
+.date-picker > .arrow-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.date-picker > .arrow-button > .arrow {
+    -fx-background-color: #5A6B80;
+}
+
+/* --------------------------------------------------------------- tables --- */
+
+.table-view {
+    -fx-background-color: #FFFFFF;
+    -fx-background-insets: 0;
+    -fx-border-color: #E4E9F0;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-border-width: 1;
+    -fx-padding: 0;
+    -fx-table-cell-border-color: transparent;
+}
+
+.table-view:focused {
+    -fx-border-color: #E4E9F0;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #F2F5F9;
+    -fx-background-radius: 8 8 0 0;
+}
+
+.table-view .column-header,
+.table-view .filler {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-size: 36px;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #5A6B80;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-alignment: center-left;
+    -fx-padding: 0 10 0 10;
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #EEF2F7;
+    -fx-border-width: 0 0 1 0;
+    -fx-cell-size: 36px;
+}
+
+.table-view .table-row-cell:odd {
+    -fx-background-color: #FCFDFE;
+}
+
+.table-view .table-row-cell:empty {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: transparent;
+}
+
+.table-view .table-row-cell:empty .table-cell {
+    -fx-border-color: transparent;
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: #E6F0FB;
+}
+
+.table-view .table-row-cell:selected .table-cell {
+    -fx-text-fill: #1F5188;
+}
+
+.table-view .table-cell {
+    -fx-padding: 0 10 0 10;
+    -fx-text-fill: #1F2A37;
+    -fx-alignment: center-left;
+}
+
+.table-view .placeholder .label {
+    -fx-text-fill: #8A99AC;
+}
+
+.table-view .corner {
+    -fx-background-color: transparent;
+}
+
+/* ------------------------------------------------------------- statuses --- */
+
+.status-cell {
+    -fx-font-weight: bold;
+}
+
+/* Amounts in the dashboard list: green for money in, red for money out. */
+.table-view .table-cell.amount-in {
+    -fx-text-fill: #1E7A46;
+    -fx-font-weight: bold;
+}
+
+.table-view .table-cell.amount-out {
+    -fx-text-fill: #C0392B;
+    -fx-font-weight: bold;
+}
+
+.status-cell.status-ok { -fx-text-fill: #1E7A46; }
+.status-cell.status-warn { -fx-text-fill: #B26A00; }
+.status-cell.status-over { -fx-text-fill: #C0392B; }
+
+/* ---------------------------------------------------------------- chart --- */
+
+.chart-box {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 8;
+    -fx-border-color: #E4E9F0;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-padding: 12;
+}
+
+.chart-bar {
+    -fx-fill: linear-gradient(to top, #2E6FB7, #6BA6DB);
+    -fx-arc-width: 4;
+    -fx-arc-height: 4;
+}
+
+.chart-name {
+    -fx-font-size: 12px;
+    -fx-text-fill: #1F2A37;
+}
+
+.chart-value {
+    -fx-font-size: 11px;
+    -fx-text-fill: #6B7A8F;
+}
+
+.chart-baseline {
+    -fx-background-color: #E4E9F0;
+    -fx-min-height: 1;
+    -fx-pref-height: 1;
+    -fx-max-height: 1;
+}
+
+/* ------------------------------------------------------------ scrollbars --- */
+
+.scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #CBD6E3;
+    -fx-background-radius: 6;
+    -fx-background-insets: 2;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #B3C2D4;
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow {
+    -fx-shape: " ";
+    -fx-padding: 0;
+}

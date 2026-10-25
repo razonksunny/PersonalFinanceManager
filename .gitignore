@@ -1,0 +1,17 @@
+# Maven build folder
+target/
+
+# The database file with the user data
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+nbproject/
