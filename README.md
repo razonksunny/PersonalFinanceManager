@@ -24,6 +24,22 @@ written to be simple, short and easy to explain.
 
 ---
 
+## Screenshots
+
+| Login | Dashboard |
+|---|---|
+| ![Login screen](screenshots/01-login.png) | ![Dashboard](screenshots/02-dashboard.png) |
+
+| Transactions | Search |
+|---|---|
+| ![Transactions](screenshots/03-transactions.png) | ![Search by category](screenshots/04-transactions-search.png) |
+
+| Budgets | Reports |
+|---|---|
+| ![Budgets](screenshots/05-budgets.png) | ![Monthly report](screenshots/06-reports.png) |
+
+---
+
 ## Technologies
 
 | Part | What is used |
@@ -40,7 +56,8 @@ written to be simple, short and easy to explain.
 
 You need two things on your computer:
 
-1. **JDK 21** – check with `java -version` (it must say 21).
+1. **JDK 21** – check with `java -version` (it must say 21). Maven must use the
+   same JDK; `mvn -version` shows the Java version it runs on.
 2. **Maven** – check with `mvn -version`.
 
 Then open a terminal in the project folder and run:
@@ -103,7 +120,7 @@ the application is closed.
 | **Abstraction** | `Transaction` is an abstract class (`Transaction.java:5`). It says what a transaction is, but you cannot make one directly – you must make an `Income` or an `Expense`. |
 | **Inheritance** | `Income extends Transaction` (`Income.java:5`) and `Expense extends Transaction` (`Expense.java:5`). Both get the amount, the category, the description and the date from the parent. |
 | **Polymorphism** | `Transaction` has the abstract method `getType()` (`Transaction.java:27`). `Income` answers `"Income"` (`Income.java:17`) and `Expense` answers `"Expense"` (`Expense.java:17`). Because the program always calls `transaction.getType()`, the right answer comes back for every kind of transaction. |
-| **Encapsulation** | Every field in every class is `private` and is reached with a getter and a setter. For example `User.java:14` holds the list of transactions, and `User.getTransactions()` gives it out. |
+| **Encapsulation** | Every instance field is `private` and is reached with a getter and a setter. For example `User.java:14` holds the list of transactions, and `User.getTransactions()` gives it out. |
 | **Composition** | A `User` **has** transactions and budgets: `User.java:14` and `User.java:15` keep the lists, and `User.addTransaction()` (`User.java:44`) puts a new one in. The transactions belong to the user. |
 
 ---
@@ -140,13 +157,17 @@ per window by `UiStyle.apply(scene)`.
 ```
 pom.xml
 README.md
+screenshots/     the six images shown above
 src/main/java/com/financemanager/
-â”œâ”€â”€ Main.java
-â”œâ”€â”€ model/     Transaction, Income, Expense, Budget, User, Category, Report
-â”œâ”€â”€ db/        DatabaseManager
-â”œâ”€â”€ service/   FinanceService
-â””â”€â”€ ui/        LoginView, MainWindow, DashboardView, TransactionsView,
-              BudgetsView, ReportsView, UiStyle
+├── Main.java
+├── model/       Transaction, Income, Expense, Budget, User, Category, Report
+├── db/          DatabaseManager
+├── service/     FinanceService
+└── ui/          LoginView, MainWindow, DashboardView, TransactionsView,
+                 BudgetsView, ReportsView, UiStyle
 src/main/resources/
-â””â”€â”€ styles.css The colours, fonts and button states of the whole application
+└── styles.css   The colours, fonts and button states of the whole application
 ```
+
+`finance.db` and `target/` appear after the application is built or started;
+both are ignored by git, so the demo data on your computer is not uploaded.
